@@ -1,3 +1,231 @@
-p{
-    background: red;
+body{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    height: 200px;
+    background: url("../img/course-img03.jpg") no-repeat;  
+    background-size: cover;        
+}
+.main{
+    margin: 20px 14px;
+    height: 80%;
+    overflow: scroll;
+    background: rgb(255, 255, 255);
+    .ranking-box{
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        width: 100%;
+        height: 150px;
+    }
+    .ranking{
+        position: relative;
+        margin-right: 20px;
+        height: 100%;
+        border-radius: 15px;
+        background: rgba(21, 146, 204,.73);
+        flex: 1.5;  
+        .trophy{
+            position: absolute;
+            left: -15px;
+            bottom: 0px;
+            width: 121px;
+            height: 121px;
+            background: url("../img/index-card-rank.png") no-repeat;
+            background-size: cover;     
+            opacity: 0.3;        
+        } 
+        .text-box{
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 20px; 
+            font-weight: bold;           
+            color: #004E73;
+        }
+        .num-box{
+            position: absolute;
+            right: 20px;
+            bottom: 5px;
+            font-size: 80px; 
+            font-weight: bolder;           
+            color: #fff;
+        }             
+    }
+    .Clock-in{  
+        position: relative;
+        height: 100%;
+        border-radius: 15px;  
+        background: rgba(122, 202, 245,.73);
+        flex: 2;  
+        .cld{
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 110px;
+            height: 110px;
+            background: url("../img/index-card-sum.png") no-repeat;
+            background-size: cover;     
+            opacity: 0.67;  
+        } 
+        .text1-box{
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 20px; 
+            font-weight: bold;           
+            color: #004E73;
+        }
+        .num1-box{
+            position: absolute;
+            right: 20px;
+            bottom: 23px;
+            width: 100px;
+            height: 40px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 20px;
+            border: 3px solid rgba(0, 81, 119, 100);          
+            color: #004E73;
+        }                   
+    }
+}
+.main .run-box{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    width: 100%;
+    height: 110px;
+    .movement{
+        position: relative;
+        height: 100%;
+        margin-right: 20px;        
+        border-radius: 15px;
+        background: url("../img/index-card-data.png") no-repeat;
+        background-position: 0 0;
+        background-size: cover;    
+        flex: 1;
+        span{
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            color: white;
+        }                                  
+    }
+    .badge{
+        position: relative;
+        height: 100%;
+        border-radius: 15px;
+        background: rgba(0, 78, 115,.4);
+        flex: 1;
+        .badge-box{
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 95px;
+            height: 95px;
+            background: url("../img/index-card-badge.png") no-repeat;
+            background-size: cover;     
+            opacity: 0.67;  
+        } 
+        .Sports-badge{
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 20px; 
+            font-weight: bold;           
+            color: #004E73;
+        }
+        .number{
+            position: absolute;
+            right: -25px;
+            bottom: 0px;
+            width: 100px;         
+            color: #004E73;
+            span{
+                color: rgba(0, 78, 115, 100);
+                font-size: 80px;
+                font-weight: bolder;
+            }
+        }       
+    }
+}
+.main .bunner{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 110px;
+    border-radius: 15px;
+    background: url("../img/index-swiper-bg2.jpg") no-repeat;
+    background-size: cover;
+    background-position: 0 -10px;
+    span{
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        color: white;
+    } 
+}
+.main .bunner1{
+    position: relative;
+    width: 100%;
+    height: 110px;
+    border-radius: 15px;
+    background: url("../img/index-card-run.png") no-repeat;
+    background-size: cover;
+    background-position: 0 -10px;
+    span{
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        color: white;
+    } 
+}
+.footer{
+    width: 100%;
+    height: 77px;
+    background: rgb(255, 255, 255);
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    .home{
+        height: 100%;
+        width: 14%;
+        text-align: center;
+        color: #4294FF;        
+        i{
+            font-size: 45px;
+        }
+        div{
+            margin-top: 5px;    
+            font-size: 14px;
+        }
+    }
+    .sport{
+        height: 100%;
+        width: 14%;
+        text-align: center;
+        color: #8A8A8A;               
+        i{
+            font-size: 45px;
+        }
+        div{
+            margin-top: 5px;    
+            font-size: 14px;
+        }
+    }.Personal{
+        height: 100%;
+        width: 14%;
+        text-align: center;
+        color: #8A8A8A;    
+        i{
+            font-size: 45px;
+        }
+        div{
+            margin-top: 5px;    
+            font-size: 14px;
+        }
+    }
 }

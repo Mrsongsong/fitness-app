@@ -12,27 +12,33 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     //入口
     entry: {
+        commonCSS: "./src/js/common.js",
+        dom: "./src/js/common/dom.js",
+        http: "./src/js/common/http.js",
+
+        captcha: "./src/lib/captcha/captcha-mini.js",
+
         home: "./src/js/home.js",
         login: "./src/js/login.js",
         register: "./src/js/register.js",
+        advertisement: "./src/js/advertisement.js",
     },
     //出口
     output: {
-        path: path.resolve(__dirname, "dist"),   //绝对路径
+        path: path.resolve(__dirname, "dist"), //绝对路径
         filename: 'js/[name].js',
         publicPath: './',
     },
     //loader 
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
                         publicPath: '../'
                     }
-                }, 'css-loader','postcss-loader']
+                }, 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.less$/,
@@ -41,22 +47,22 @@ module.exports = {
                     options: {
                         publicPath: '../'
                     }
-                }, "css-loader",'postcss-loader',"less-loader"]
+                }, "css-loader", 'postcss-loader', "less-loader"]
             },
             {
                 test: /\.(png|jpg|gif|jpeg)$/, //配置css中的图片打包
-                loader: 'url-loader',     //只有一个处理的loader的写法  
+                loader: 'url-loader', //只有一个处理的loader的写法  
                 //可以通过url-loader 将图片压缩为 base64编码格式的图片
                 //大图就不压缩  小图可以压缩
                 options: {
-                    name: '[hash:16].[ext]',  // 图片输出的名字hash长度16位 默认32位
-                    limit: 30 * 1024,  // 限制 小于30kb base64处理
+                    name: '[hash:16].[ext]', // 图片输出的名字hash长度16位 默认32位
+                    limit: 30 * 1024, // 限制 小于30kb base64处理
                     esModule: false,
                     outputPath: 'img'
                 }
             },
             {
-                test: /\.html$/,    //配置html文件打包
+                test: /\.html$/, //配置html文件打包
                 loader: 'html-loader'
             },
             {
@@ -68,27 +74,32 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader',    // loader 编译es6为es5
-                exclude: /node_modules/  // 排除
+                loader: 'babel-loader', // loader 编译es6为es5
+                exclude: /node_modules/ // 排除
             }
         ]
     },
     //plugin 插件
     plugins: [
-        new HtmlWebpackPlugin({   //配置html打包的插件
-            template: './src/page/home.html',         //以哪个html文件作为打包的模板
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/home.html', //以哪个html文件作为打包的模板
             filename: 'home.html',
-            chunks: ["home"]
+            chunks: ["home", "commonCSS", "dom"]
         }),
-        new HtmlWebpackPlugin({   //配置html打包的插件
-            template: './src/page/login.html',         //以哪个html文件作为打包的模板
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/login.html', //以哪个html文件作为打包的模板
             filename: 'login.html',
-            chunks: ["login"]
+            chunks: ["login", "commonCSS", "dom", "http"]
         }),
-        new HtmlWebpackPlugin({   //配置html打包的插件
-            template: './src/page/register.html',         //以哪个html文件作为打包的模板
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/register.html', //以哪个html文件作为打包的模板
             filename: 'register.html',
-            chunks: ["register"]
+            chunks: ["register", "commonCSS", "dom", "captcha", "http"]
+        }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/advertisement.html', //以哪个html文件作为打包的模板
+            filename: 'advertisement.html',
+            chunks: ["advertisement", "commonCSS", "dom"]
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
@@ -104,10 +115,10 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'), // 启动服务器目录
         compress: true, // 启动gzip
-        port: 999,  // 端口  8080 80  8081 8082
+        port: 999, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'home.html', // 打开的页面
+        openPage: 'advertisement.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 
