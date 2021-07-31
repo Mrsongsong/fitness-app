@@ -15,13 +15,16 @@ module.exports = {
         commonCSS: "./src/js/common.js",
         dom: "./src/js/common/dom.js",
         http: "./src/js/common/http.js",
+        utils: "./src/js/common/utils.js",
 
+        Swiper: "./src/lib/swiper/swiper-bundle.js",
         captcha: "./src/lib/captcha/captcha-mini.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
         register: "./src/js/register.js",
         advertisement: "./src/js/advertisement.js",
+        mine: "./src/js/mine.js"
     },
     //出口
     output: {
@@ -84,22 +87,27 @@ module.exports = {
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/home.html', //以哪个html文件作为打包的模板
             filename: 'home.html',
-            chunks: ["home", "commonCSS", "dom"]
+            chunks: ["home", "commonCSS", "dom", "Swiper", "http"]
         }),
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/login.html', //以哪个html文件作为打包的模板
             filename: 'login.html',
-            chunks: ["login", "commonCSS", "dom", "http"]
+            chunks: ["login", "commonCSS", "dom", "http", "utils"]
         }),
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/register.html', //以哪个html文件作为打包的模板
             filename: 'register.html',
-            chunks: ["register", "commonCSS", "dom", "captcha", "http"]
+            chunks: ["register", "commonCSS", "dom", "captcha", "http", "utils"]
         }),
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/advertisement.html', //以哪个html文件作为打包的模板
             filename: 'advertisement.html',
             chunks: ["advertisement", "commonCSS", "dom"]
+        }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/mine.html', //以哪个html文件作为打包的模板
+            filename: 'mine.html',
+            chunks: ["mine", "commonCSS", "dom", "http", "utils"]
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
@@ -118,7 +126,7 @@ module.exports = {
         port: 999, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'advertisement.html', // 打开的页面
+        openPage: 'mine.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 

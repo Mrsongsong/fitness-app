@@ -7,9 +7,10 @@ document.ready(function() {
     let pwd = document.querySelector("#please-pwd")
     let loginBtn = document.querySelector("#login-btn")
     let textBox = document.querySelector(".text-prompt")
-        // console.log(RegisterAccount, account, pwd);
-        // 注册账号事件监听注册
-
+    if (localStorage.getItem("user")) {
+        location.href = "./home.html"
+    }
+    // 注册账号事件监听注册
     RegisterAccount.addEventListener("click", function(e) {
             location.href = "./register.html"
         })
@@ -22,16 +23,18 @@ document.ready(function() {
         if (account.value && pwd.value) {
             // 提醒用户手机号输入错误
             if (!reg.test(account.value)) {
-                account.value = ""
-                account.setAttribute("placeholder", "请输入正确的的账号");
-                account.setAttribute("class", "phone phone1");
+                toast.createToast(1, "账号错误")
+                    // account.value = ""
+                    // account.setAttribute("placeholder", "请输入正确的的账号");
+                    // account.setAttribute("class", "phone phone1");
                 return;
             }
             // 密码至少包含：数字和英文字母，长度6-20
             if (!pwdReg.test(pwd.value)) {
-                pwd.value = ""
-                pwd.setAttribute("placeholder", "请输入正确的的密码");
-                pwd.setAttribute("class", "phone phone1");
+                toast.createToast(1, "密码错误")
+                    // pwd.value = ""
+                    // pwd.setAttribute("placeholder", "请输入正确的的密码");
+                    // pwd.setAttribute("class", "phone phone1");
                 return;
             }
             // 请求ajax数据
@@ -41,15 +44,19 @@ document.ready(function() {
             }
             window.$http.post("/users/login", data, function(res) {
                 if (res.status == 0) {
-                    location.href = "./home.html"
+                    localStorage.setItem("user", JSON.stringify(res.data.user))
+                    toast.createToast(0, "登录成功")
+                    setTimeout(function() {
+                        location.href = "./home.html"
+                    }, 1000)
                 } else {
-                    pwd.value = ""
-                    pwd.setAttribute("placeholder", "密码不正确");
-                    pwd.setAttribute("class", "phone phone1");
+                    toast.createToast(1, res.msg)
+                        // pwd.value = ""
+                        // pwd.setAttribute("placeholder", "密码不正确");
+                        // pwd.setAttribute("class", "phone phone1");
                 }
             })
 
         }
     })
-
 })

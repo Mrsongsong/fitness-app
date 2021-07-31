@@ -9,17 +9,37 @@
 </head>
 
 <body>
-    <header class="header"></header>
+    <header class="header">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../img/健身.jpeg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/健身02.jpeg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/健身04.jpeg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/健身06.jpeg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </header>
     <main class="main flex1">
         <div class="ranking-box">
             <div class="ranking">
                 <div class="trophy"></div>
                 <div class="text-box">今日排名</div>
-                <div class="num-box">9</div>
+                <div class="num-box"></div>
             </div>
             <div class="Clock-in">
                 <div class="cld"></div>
-                <div class="text1-box">累积打卡23天</div>
+                <div class="text1-box">累积打卡<span id="day-num">23</span>天</div>
                 <div class="num1-box">今日打卡</div>
             </div>
         </div>
@@ -30,7 +50,7 @@
             <div class="badge">
                 <div class="badge-box"></div>
                 <div class="Sports-badge">累积运动徽章</div>
-                <div class="number"><span>3</span>枚</div>
+                <div class="number"><span id="num-bge"></span>枚</div>
             </div>
         </div>
         <div class="bunner">
