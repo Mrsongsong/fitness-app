@@ -18,6 +18,45 @@ let toast = {
         setTimeout(function() {
             div.remove()
         }, 1000)
+    },
+    //封装页脚
+    createFooter: function(page) {
+        let bodyDom = document.body
+        let footer = document.createElement("footer")
+        footer.className = "footer dpflex"
+        let html = `
+        <div class="${page=="home"?"home active":"home"}">
+            <i class="iconfont icon-shouye"}"></i>
+            <div>首页</div>
+        </div>
+        <div class="${page=="sports"?"sport active":"sport"}">
+            <i class="iconfont icon-xin"}"></i>
+            <div>运动</div>
+        </div>
+        <div class="${page=="mine"?"Personal active":"Personal"}">
+            <i class="iconfont icon-Icon_wode--outline"}"></i>        
+            <div>我的</div>
+        </div>
+        `
+        footer.innerHTML = html
+        bodyDom.appendChild(footer)
+    },
+    // 注册点击事件
+    clickAll: function() {
+        let home = document.querySelector(".footer .home")
+        let sport = document.querySelector(".footer .sport")
+        let Personal = document.querySelector(".footer .Personal")
+
+        home.addEventListener("click", function(e) {
+            location.href = "./home.html"
+        })
+        sport.addEventListener("click", function(e) {
+            location.href = "./sports.html"
+        })
+        Personal.addEventListener("click", function(e) {
+            location.href = "./mine.html"
+        })
+
     }
 }
 window.toast = toast

@@ -6,6 +6,11 @@ document.ready(function() {
     let daynumDOM = document.querySelector("#day-num")
     let numbgeDom = document.querySelector("#num-bge")
     let num1boxBtn = document.querySelector(".num1-box")
+    toast.createFooter("home")
+    toast.clickAll()
+
+
+
     var mySwiper = new Swiper('.swiper-container', {
         // direction: 'vertical', // 垂直切换选项
         autoplay: true, //等同于以下设置
@@ -16,7 +21,6 @@ document.ready(function() {
             el: '.swiper-pagination',
         },
     })
-
 
     // 获取user
     let user = JSON.parse(localStorage.getItem("user"))
