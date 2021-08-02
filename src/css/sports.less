@@ -1,0 +1,156 @@
+.nav{
+    width: 100%; 
+    height: 57px;
+    justify-content: space-around;
+    align-items: flex-end;
+    div{
+        width: 30%;
+        height: 37px;
+        line-height: 37px;
+        text-align: center;
+    }
+}
+.running{
+    font-size: 20px;
+    color: rgba(66, 148, 255, 100);
+    .run-box{
+        margin: auto;
+        width: 38%;
+        height: 37px;
+        border-top: 3px solid rgba(170, 217, 247, 100);
+    }
+}
+.cycling{
+    .run-box{
+        margin: auto;
+        width: 38%;
+        height: 37px;
+    }
+}
+.train{
+    .run-box{
+        margin: auto;
+        width: 45%;
+        height: 37px;
+    }
+}
+.border-line{
+    margin: auto;
+    margin-top: 3px;
+    width: 90%;
+    border: 1px solid rgba(221, 221, 221, 100);
+}
+.main{
+    width: 100%;
+    overflow-y: scroll;
+    .distance{
+        margin: auto;
+        margin-top: 15px;
+        width: 90%;
+    }
+    .km{
+        margin: auto;
+        width: 90%;
+    }
+    .start{
+        margin: auto;
+        margin-top: 70px;
+        width: 191px;
+        height: 191px;
+        border-radius: 50%;
+        font-size: 90px;
+        line-height: 191px;
+        text-align: center;
+        background-color: rgba(66, 148, 255, .5);
+        color: rgba(21, 146, 204, .92);
+    }
+}
+.main .map{
+    position: relative;
+    padding-top: 30px;
+    width: 100%;
+    height: 485px;
+}
+.main .map:before{
+    width: 100%;
+    height: 485px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
+    background: url("../img/地图.jpeg") no-repeat;
+    background-size: cover;
+}
+.main .icon-box{
+    margin: auto;
+    margin-top: 6px;
+    width: 90%;
+    justify-content: space-between;
+    .active{
+        background: #4294FF;
+    }
+    div{
+        width: 30%;
+        height: 40px;
+        border-radius: 20px 20px 20px 20px;
+        line-height: 40px;
+        font-size: 16px;
+        text-align: center;
+        color: rgba(255, 255, 255, 100);
+        background-color: rgba(156, 188, 226, 100);
+    }
+
+}
+.main .btn-box{
+    margin: auto;
+    margin-top: 70px;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    i{
+        font-size: 30px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .Set{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 100);
+        box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
+    }
+    .target{
+        width: 121px;
+        height: 40px;
+        text-align: center;
+        border-radius: 20px;
+        line-height: 40px;
+        color: white;
+        background-color: rgba(66, 148, 255, 100);
+    }
+    .music{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 100);
+        box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
+    }
+}
+.main .text-box{
+    position: relative;
+    margin: auto;
+    margin-bottom: 52px;
+    margin-top: 16px;
+    width: 90%;
+    .arrow{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+

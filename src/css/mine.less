@@ -19,19 +19,22 @@ body{
             height: 120px;
             border-radius: 50%;
             border: 3px solid rgba(66, 148, 255, 100);
-            background: #E8E8E8;
+            background: url("../img/dog.jpg");
+            background-size: cover;
         }
         .user-name{
             position: absolute;
             top: 79px;
             left: 155px;
+            width: 200px;            
             font-size: 22px;            
             color: rgba(16, 16, 16, 100);
         }
         .signature{
             position: absolute;
             left: 26px;
-            bottom: 20px
+            bottom: 20px;
+            width: 80%;
         }
     }
     .sport-data{
@@ -100,16 +103,15 @@ body{
         
         }
         .round-box{
+            margin: auto;            
             width: 90%;
             height: 100px;
-            margin: auto;
+            justify-content: space-between;
             div{
-                flex: 1;
+                width: 100px;
+                height: 100px;
                 border-radius: 50%;
                 border: 1px solid rgba(187, 187, 187, 100);
-            }
-            .round-two{
-                margin: 0 37px;
             }
         }
        
@@ -125,4 +127,7 @@ body{
         font-size: 18px;
         background: white;
     }
+}
+#inpBtn{
+    display: none;
 }

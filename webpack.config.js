@@ -19,12 +19,18 @@ module.exports = {
 
         Swiper: "./src/lib/swiper/swiper-bundle.js",
         captcha: "./src/lib/captcha/captcha-mini.js",
+        weui: "./src/lib/weui/weui.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
         register: "./src/js/register.js",
         advertisement: "./src/js/advertisement.js",
-        mine: "./src/js/mine.js"
+        mine: "./src/js/mine.js",
+        sports: "./src/js/sports.js",
+        edit: "./src/js/edit.js",
+        sportdata:"./src/js/sportdata.js",
+        course:"./src/js/course.js"
+
     },
     //出口
     output: {
@@ -87,7 +93,7 @@ module.exports = {
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/home.html', //以哪个html文件作为打包的模板
             filename: 'home.html',
-            chunks: ["home", "commonCSS", "dom", "Swiper", "http"]
+            chunks: ["home", "commonCSS", "dom", "Swiper", "http", "utils"]
         }),
         new HtmlWebpackPlugin({ //配置html打包的插件
             template: './src/page/login.html', //以哪个html文件作为打包的模板
@@ -109,6 +115,29 @@ module.exports = {
             filename: 'mine.html',
             chunks: ["mine", "commonCSS", "dom", "http", "utils"]
         }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/sports.html', //以哪个html文件作为打包的模板
+            filename: 'sports.html',
+            chunks: ["sports", "commonCSS", "dom", "http", "utils"]
+        }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/edit.html', //以哪个html文件作为打包的模板
+            filename: 'edit.html',
+            chunks: ["edit", "commonCSS", "dom", "http", "weui","utils"]
+        }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/sportdata.html', //以哪个html文件作为打包的模板
+            filename: 'sportdata.html',
+            chunks: ["sportdata", "commonCSS", "dom", "http"]
+        }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/course.html', //以哪个html文件作为打包的模板
+            filename: 'course.html',
+            chunks: ["course", "commonCSS", "dom", "http"]
+        }),
+
+
+
         new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
         }),
@@ -126,7 +155,7 @@ module.exports = {
         port: 999, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'mine.html', // 打开的页面
+        openPage: 'course.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 
