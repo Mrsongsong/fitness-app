@@ -27,13 +27,14 @@
 .mt0 {
     margin-top: 0;
 }
+
 .mt6 {
     margin-top: 6px;
 }
+
 .mt8 {
     margin-top: 8px;
 }
-
 
 .mt16 {
     margin-top: 16px;
@@ -55,6 +56,10 @@
     margin-bottom: 16px;
 }
 
+.mb10 {
+    margin-bottom: 10px;
+}
+
 .ml12 {
     margin-left: 12px;
 }
@@ -73,26 +78,39 @@
 .fs12 {
     font-size: 12px;
 }
+
 .fs14 {
     font-size: 14px;
 }
+
 .fs18 {
     font-size: 18px;
 }
+
+.fs20 {
+    font-size: 20px;
+}
+
 .fs34 {
     font-size: 34px;
 }
+
 .fs40 {
     font-size: 40px;
 }
+
 .fs48 {
     font-size: 48px;
 }
 
+
 /* 加粗 */
-.fw{
+
+.fw {
     font-weight: bold;
 }
+
+
 /* 颜色 */
 
 .c429 {
@@ -102,6 +120,7 @@
 .c8a8 {
     color: #8A8A8A;
 }
+
 .c9a9 {
     color: #9A9A9A;
 }
