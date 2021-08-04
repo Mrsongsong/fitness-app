@@ -46,7 +46,6 @@ let toast = {
         let home = document.querySelector(".footer .home")
         let sport = document.querySelector(".footer .sport")
         let Personal = document.querySelector(".footer .Personal")
-
         home.addEventListener("click", function(e) {
             location.href = "./home.html"
         })
@@ -57,6 +56,22 @@ let toast = {
             location.href = "./mine.html"
         })
 
+    },
+    // 字符串转对象
+    strToObj: function(data) {
+        // ?id=3&age=20
+        let obj = {}
+        let str = data
+        let str1 = str.substr(1)
+            // id=3&age=20
+        let arr = str1.split("&")
+            // ["id=3","age=20"]
+        arr.forEach(function(item, index) {
+            let arr1 = item.split("=")
+                // [id,3] id是个字符串所以不能用obj.要用obj[]
+            obj[arr1[0]] = arr1[1]
+        })
+        return obj;
     }
 }
 window.toast = toast

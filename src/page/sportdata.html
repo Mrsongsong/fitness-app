@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-        
+
+<body class="dpflex fdc">
+    <header class="header">
+        <p>
+            <i class="iconfont icon-icon1"></i>
+        </p>
+
+    </header>
+
+    <main class="main flex1">
+        <div class="sport-data">
+            <div class="title-box dpflex">
+                <div class="fs20 fw">我的运动数据</div>
+                <div class="round"></div>
+            </div>
+            <div class="sport-cli dpflex">
+                <div class="sport flex1 dpflex fdc">
+                    <div class="caad">总运动</div>
+                    <div class="fs40 cfff">99999<span class="fs16">分钟</span></div>
+                </div>
+                <div class="qk flex1 dpflex fdc">
+                    <div class="caad">总消耗</div>
+                    <div class="fs40 cfff">99999<span class="fs16">千卡</span></div>
+                </div>
+            </div>
+            <div class="small-box dpflex fs14">
+                <div class="left dpflex fdc">
+                    <div class="caad">消耗(千卡)</div>
+                    <div class="cfff">99999</div>
+                </div>
+                <div class="mid dpflex fdc">
+                    <div class="caad">累计(天)</div>
+                    <div class="cfff">999</div>
+                </div>
+                <div class="right dpflex fdc">
+                    <div class="caad">连续(天)</div>
+                    <div class="cfff">999</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart">
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="bar-charts" style="width: 100%; height:250px;" class="mt20"></div>
+            <div id="pie-chart" style="width: 100%; height:250px;"></div>
+            <div id="line-chart" style="width: 100%; height:250px;"></div>
+            <div id="bar-chart" style="width: 100%; height:250px;" class="mt20"></div>
+        </div>
+
+    </main>
 </body>
+
 </html>

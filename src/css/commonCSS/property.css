@@ -28,12 +28,20 @@
     margin-top: 0;
 }
 
+.mt5 {
+    margin-top: 5px;
+}
+
 .mt6 {
     margin-top: 6px;
 }
 
 .mt8 {
     margin-top: 8px;
+}
+
+.mt10 {
+    margin-top: 10px;
 }
 
 .mt16 {
@@ -46,6 +54,10 @@
 
 .mt40 {
     margin-top: 40px;
+}
+
+.mt60 {
+    margin-top: 60px;
 }
 
 .mr16 {
@@ -62,6 +74,10 @@
 
 .ml12 {
     margin-left: 12px;
+}
+
+.ml-80 {
+    margin-left: -80px;
 }
 
 .pd16 {
@@ -81,6 +97,10 @@
 
 .fs14 {
     font-size: 14px;
+}
+
+.fs16 {
+    font-size: 16px;
 }
 
 .fs18 {
@@ -103,6 +123,10 @@
     font-size: 48px;
 }
 
+.fs60 {
+    font-size: 60px;
+}
+
 
 /* 加粗 */
 
@@ -123,4 +147,12 @@
 
 .c9a9 {
     color: #9A9A9A;
+}
+
+.caad {
+    color: #AAD9F7;
+}
+
+.cfff {
+    color: #fff;
 }

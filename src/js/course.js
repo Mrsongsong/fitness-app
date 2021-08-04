@@ -14,23 +14,27 @@ document.ready(function() {
         // console.log(res);
         let arr = res.data
         let arr1 = arr.find(function(item, index) {
-            return item.latest === 1
-        })
+                return item.latest === 1
+            })
+            // console.log(arr1);
         let NewHtml = `
+        <a href="./introduce.html?id=${arr1.courseId}">
         <div class="course-box">
             <img src="${BASE_URL + arr1.imgurl}" class="video-box">
             <div class="fw text text1">${arr1.name}</div>
             <div class="fs12 c9a9 text">${arr1.desc}</div>
         </div>
+        </a>
+        
         `
             // videoBoxDom.style.backgroundImage = 'url(' + BASE_URL + arr1.imgurl + ')';
             // videoBoxDom.style.bankgroundImage = `url(${url}) `
         newDom.innerHTML = NewHtml
         let html = ""
         arr.forEach(function(item, index) {
-            console.log(item);
+            // console.log(item);
             html += `
-            <a href="">
+            <a href="./introduce.html?id=${item.courseId}">
                 <div class="list-box">
                     <img src="${BASE_URL + item.imgurl}">
                     <div class="big-box">

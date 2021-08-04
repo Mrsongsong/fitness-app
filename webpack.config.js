@@ -30,7 +30,8 @@ module.exports = {
         edit: "./src/js/edit.js",
         sportdata: "./src/js/sportdata.js",
         course: "./src/js/course.js",
-        introduce: "./src/js/introduce.js"
+        introduce: "./src/js/introduce.js",
+        player: "./src/js/player.js"
     },
     //出口
     output: {
@@ -140,6 +141,11 @@ module.exports = {
             filename: 'introduce.html',
             chunks: ["introduce", "commonCSS", "dom", "http", "utils"]
         }),
+        new HtmlWebpackPlugin({ //配置html打包的插件
+            template: './src/page/player.html', //以哪个html文件作为打包的模板
+            filename: 'player.html',
+            chunks: ["player", "commonCSS", "dom", "http", "utils"]
+        }),
 
 
 
@@ -160,7 +166,7 @@ module.exports = {
         port: 999, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'introduce.html', // 打开的页面
+        openPage: 'course.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 
