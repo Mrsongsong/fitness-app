@@ -9,6 +9,8 @@ document.ready(function() {
     let inputDom = document.querySelector("#inpBtn")
     let headerDom = document.querySelector(".header")
     let exitbtnDom = document.querySelector(".exit-btn")
+    let sportDataDom = document.querySelector(".sport-data")
+
     let BASE_URL = 'http://139.9.177.51:8099'
 
     toast.createFooter("mine")
@@ -37,22 +39,21 @@ document.ready(function() {
         })
         // input事件获取头像
     inputDom.addEventListener("change", function(e) {
-        $updateFile("/users/upload", "imgurl", inputDom.files[0], function(res) {
-            // headImgDom.style.backgroundImage = url(BASE_URL + res.data)
-            let url = BASE_URL + res.data
-                // headImgDom.style.backgroundImage = 'url(' + BASE_URL + res.data + ')';
-            headImgDom.style.backgroundImage = `url(${url}) `
+            $updateFile("/users/upload", "imgurl", inputDom.files[0], function(res) {
+                // headImgDom.style.backgroundImage = url(BASE_URL + res.data)
+                let url = BASE_URL + res.data
+                    // headImgDom.style.backgroundImage = 'url(' + BASE_URL + res.data + ')';
+                headImgDom.style.backgroundImage = `url(${url}) `
 
 
-            $http.post("/users/userEdit", { imgurl: url, userId: user.userId }, function(res) {
-                console.log("我拿到图片了");
+                $http.post("/users/userEdit", { imgurl: url, userId: user.userId }, function(res) {
+                    console.log("我拿到图片了");
+                })
             })
+
+
         })
-
-
-    })
-
-    // 点击头像时间触发input事件
+        // 点击头像时间触发input事件
     headImgDom.addEventListener("click", function(e) {
             inputDom.click();
             e.stopPropagation();
@@ -65,7 +66,11 @@ document.ready(function() {
 
     //点击退出按钮清空本地存储返回注册页
     exitbtnDom.addEventListener("click", function() {
-        localStorage.clear()
-        location.href = "./login.html"
+            localStorage.clear()
+            location.href = "./login.html"
+        })
+        // 点击事件进去运动数据页面
+    sportDataDom.addEventListener("click", function() {
+        location.href = "./sportdata.html"
     })
 })

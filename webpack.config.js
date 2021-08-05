@@ -166,7 +166,7 @@ module.exports = {
         port: 999, // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'course.html', // 打开的页面
+        openPage: 'advertisement.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 

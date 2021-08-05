@@ -9,8 +9,6 @@ document.ready(function() {
     toast.createFooter("home")
     toast.clickAll()
 
-
-
     var mySwiper = new Swiper('.swiper-container', {
         // direction: 'vertical', // 垂直切换选项
         autoplay: true, //等同于以下设置

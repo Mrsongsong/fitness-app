@@ -1,3 +1,11 @@
 require("../css/sports.less")
-toast.createFooter("sports")
-toast.clickAll()
+document.ready(function() {
+    toast.createFooter("sports")
+    toast.clickAll()
+
+    let trainDom = document.querySelector(".train")
+    trainDom.addEventListener("click", function() {
+        location.href = "./course.html"
+    })
+
+})

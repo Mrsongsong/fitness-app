@@ -1,6 +1,14 @@
 require("../css/sportdata.less")
 const echarts = require("echarts")
 document.ready(function() {
+    let backBtnDom =document.querySelector(".back-btn")
+
+
+    // 点击跳转到个人页面
+    backBtnDom.addEventListener("click",function(){
+        location.href="./mine.html"
+    })
+
 
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('bar-charts'));

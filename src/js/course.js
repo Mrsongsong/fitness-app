@@ -2,14 +2,15 @@ require("../css/course.less")
 
 document.ready(function() {
     toast.createFooter("sports")
+    toast.clickAll()
     let newDom = document.querySelector(".new")
     let showBoxDom = document.querySelector(".show-box")
-
+    let runDom = document.querySelector(".running")
 
     let user = JSON.parse(localStorage.getItem("user"))
     let BASE_URL = 'http://139.9.177.51:8099'
 
-
+    
     $http.get("/sports/courseList", { id: user.userId }, function(res) {
         // console.log(res);
         let arr = res.data
@@ -25,7 +26,6 @@ document.ready(function() {
             <div class="fs12 c9a9 text">${arr1.desc}</div>
         </div>
         </a>
-        
         `
             // videoBoxDom.style.backgroundImage = 'url(' + BASE_URL + arr1.imgurl + ')';
             // videoBoxDom.style.bankgroundImage = `url(${url}) `
@@ -47,8 +47,11 @@ document.ready(function() {
             `
         })
         showBoxDom.innerHTML = html
-
-
-
     })
+    runDom.addEventListener("click", function() {
+        location.href = "./sports.html"
+    })
+
+
+
 })
